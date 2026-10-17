@@ -1,7 +1,7 @@
 {
-  "name": "'App' ahh app",
-  "short_name": "'App' ahh app",
-  "description": "Type or tap a phrase, then speak it or show it big.",
+  "name": "Mimi - helper or idk",
+  "short_name": "Mimi",
+  "description": "type or say or show it big",
   "start_url": "./",
   "scope": "./",
   "display": "fullscreen",

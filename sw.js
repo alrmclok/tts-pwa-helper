@@ -1,4 +1,4 @@
-const V = 'app-v1';
+const V = 'tts-pwa-helper-66';
 const FILES = ['./', 'index.html', 'style.css', 'app.js', 'manifest.json', 'icon-192.png', 'icon-512.png',
   'icons/settings.svg', 'icons/volume-2.svg', 'icons/square.svg', 'icons/eye.svg', 'icons/chevron-right.svg'];
 self.addEventListener('install', e => e.waitUntil(

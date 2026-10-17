@@ -1,8 +1,8 @@
-<h1 align="center">tts-pwa-helper</h1>
+<h1 align="center">TTS PWA HELPER</h1>
 
 <p align="center">
-  Type it. Tap it. Say it, or show it big.<br>
-  A small text-to-speech app that installs like a real app and works offline.
+  type or say or show it big<br>
+  a small text-to-speech that could be installed easily and works offline
 </p>
 
 <p align="center">
@@ -19,48 +19,51 @@
 
 ## What is it?
 
-A helper for moments when talking is hard, tiring or just not possible. Type a sentence (or tap a ready-made phrase), then either have your phone **speak it out loud** or **show it full screen in huge text** for someone to read.
+a helper for moments when talking is hard or tiring or just not possible. type a sentence (or tap a ready-made phrase, you could change it in settings), then either have your phone **speak it out loud** or **show it full screen in huge text** for someone to read
 
-No account, no server, no tracking. Everything stays on your device.
+No account and no server, everything stays on your device
 
 ## Features
 
-- **Speak / Stop** with your device's built-in voices
+- **Speak / Stop** with your device's built-in voices (you could download custom voice, but i dont know how to, better not or feel free to risk it)
 - **Quick phrases** you can edit yourself, grouped under headings
-- **View mode** that fills the screen with your text, auto-sized to fit, in landscape, with the screen kept awake
-- **Voice picker** with adjustable speed, pitch and volume, plus a test button
-- **29 themes**, from Light and Dark to Pure, Mono Sepia, color families (Orange, Amber, Green, Emerald, Teal, Blue, Indigo, Purple, Rose, Crimson) and special ones (Sunset, Midnight, Cyberpunk, Matrix)
+- **View mode** fills the screen with your text, auto-sized to fit, in landscape, with the screen kept awake (i hope)
+- **Voice picker** with adjustable speed, pitch and volume, plus a test button. volume could only decrease, as i need to readjust the path of the voice output or i dont know the name
+- **30 themes**, from Light and Dark to Pure, Mono Sepia, color families (Orange, Amber, Green, Emerald, Teal, Blue, Indigo, Purple, Rose, Crimson) and special ones (Sunset, Midnight, Cyberpunk, Matrix, Internet Rule)
 - **Installable and offline**: add it to your home screen and use it without internet
-- **Settings are saved** in your browser, so your phrases, theme and voice stay put
+- **Settings are saved** in your browser, so your phrases, theme and voice stay put and you couldnt blame me if the data is gone
 
 ## How to use
 
-1. Open the [live website](https://alrmclok.github.io/tts-pwa-helper/).
-2. Type in the box, or tap a phrase to fill it in.
-3. Press **Speak** to hear it, or **View** to show it big. Tap the text in View mode to speak it again, and tap the faint corner to close.
-4. Open **Settings** (top right) to change the theme, voice and phrases.
+1. open the [live website](https://alrmclok.github.io/tts-pwa-helper/)
+2. type in the box, or tap default phrases to fill it in
+3. press **Speak** to hear it, or **View** to show it big. tap the text in View mode to speak it again, and tap the faint corner (there will be a quarter) to close
+4. open **Settings** (top right) to change the theme, voice and phrases
 
 ### Editing phrases
 
-In Settings, write one phrase per line. A line starting with `#` becomes a section heading:
+in Settings, write one phrase per line. a line starting with `#` becomes a section heading:
 
 ```
 # Greetings
-Hi! Nice to meet you.
-Thank you!
+haii!! nice to meet you!
+thank youu!!
 # Help
-Please speak a bit slower.
+please speak a bit slower...
+haha 6 7
 ```
 
 ## Install it as an app
 
 - **Android (Chrome):** menu, then **Install app** or **Add to Home screen**
-- **iPhone / iPad (Safari):** Share, then **Add to Home Screen**
+- **iPhone / iPad (Safari):** share, then **Add to Home Screen**
 - **Desktop (Chrome / Edge):** click the install icon in the address bar
+
+> i hope its working in iphone or ipad, never tested there
 
 ## Run it locally
 
-It's plain HTML, CSS and JavaScript, so there is nothing to build.
+its plain HTML, CSS and JavaScript, so there is nothing to build
 
 ```bash
 git clone https://github.com/alrmclok/tts-pwa-helper.git
@@ -68,7 +71,9 @@ cd tts-pwa-helper
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>. A local server is needed (instead of opening `index.html` directly) so the service worker and install features work.
+then open <http://localhost:8000>. A local server is needed (instead of opening `index.html` directly) so the service worker and install features work
+
+or you could do "open with live server" to the `index.html` if using the live server plugin
 
 ## Project structure
 
@@ -85,27 +90,34 @@ icon-512.png
 
 ## Adding a theme
 
-1. Add a block to `style.css`:
+1. add a block to `style.css`:
    ```css
    [data-theme=pink-light]{--background:#fdf2f8;--surface:#fff;--paper:#fff;--foreground:#500724;--mute:#9d174d;--border:#be185d;--border-soft:#fbcfe8;--accent:#db2777;--on:#fff}
    ```
-2. Add one line to the `THEMES` list at the top of `app.js`:
+2. add one line to the `THEMES` list at the top of `app.js`:
    ```js
    ['pink-light', 'Pink light'],
    ```
 
 ## Updating the app
 
-The service worker caches the files for offline use. After changing any file, bump the version in `sw.js` so users get the new files:
+the service worker (`sw.js`) caches application files for offline use. because the browser will continue to serve these cached files even after you update your code, you must manually trigger an update
+
+After changing any file, bump the version in `sw.js` so users get the new assets:
 
 ```js
-const V = 'tts-pwa-helper-3';
+const V = 'tts-pwa-helper-67';
 ```
+
+### How it works under the hood
+1. **Detection:** changing this string forces the browser to treat `sw.js` as a new file
+2. **Caching:** the app creates a new cache instance and downloads your updated files
+3. **Cleanup:** once the new service worker activates, it deletes the old cache to free up device space
 
 ## Browser support
 
-Text-to-speech depends on the voices installed on your device, so the list and quality of voices differ between phones and browsers. Landscape lock and screen wake lock aren't available everywhere. If the screen doesn't rotate in View mode, turn on **Use CSS rotation** in Settings, under Advanced.
+text-to-speech depends on the voices installed on your device, so the list and quality of voices may be different between phones and browsers. landscape lock and screen wake lock aren't available everywhere. if the screen doesn't rotate in View mode, turn on **Use CSS rotation** in Settings, under Advanced (at the really bottom).
 
 ## License
 
-Add a license of your choice (for example MIT) as a `LICENSE` file.
+this project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
