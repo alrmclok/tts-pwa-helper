@@ -29,7 +29,7 @@ No account and no server, everything stays on your device
 - **Quick phrases** you can edit yourself, grouped under headings
 - **View mode** fills the screen with your text, auto-sized to fit, in landscape, with the screen kept awake (i hope)
 - **Voice picker** with adjustable speed, pitch and volume, plus a test button. volume could only decrease, as i need to readjust the path of the voice output or i dont know the name
-- **30 themes**, from Light and Dark to Pure, Mono Sepia, color families (Orange, Amber, Green, Emerald, Teal, Blue, Indigo, Purple, Rose, Crimson) and special ones (Sunset, Midnight, Cyberpunk, Matrix, Internet Rule)
+- **29 themes**, from Light and Dark to Pure, Mono Sepia, color families (Orange, Amber, Green, Emerald, Teal, Blue, Indigo, Purple, Rose, Crimson) and special ones (Sunset, Midnight, Cyberpunk, Matrix)
 - **Installable and offline**: add it to your home screen and use it without internet
 - **Settings are saved** in your browser, so your phrases, theme and voice stay put and you couldnt blame me if the data is gone
 
