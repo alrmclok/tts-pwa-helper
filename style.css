@@ -41,7 +41,6 @@
 [data-theme=midnight]{--background:#020617;--surface:#0f172a;--paper:#0f172a;--foreground:#f8fafc;--mute:#94a3b8;--border:#334155;--border-soft:#1e293b;--accent:#38bdf8;--on:#020617}
 [data-theme=cyberpunk]{--background:#0d0221;--surface:#190838;--paper:#190838;--foreground:#00ffcc;--mute:#ff007f;--border:#ff007f;--border-soft:#7928ca;--accent:#ff007f;--on:#0d0221}
 [data-theme=matrix]{--background:#021505;--surface:#05290a;--paper:#05290a;--foreground:#00ff66;--mute:#00cc55;--border:#00ff66;--border-soft:#023d0e;--accent:#00ff66;--on:#021505}
-[data-theme=internet-rule]{--background:#aae5a4;--surface:#ffffff;--paper:#ffffff;--foreground:#000000;--mute:#001e96;--border:#000000;--border-soft:#000000;--accent:#000000;--on:#ffffff}
 
 /* =========================================================
    3. BASE: reset, page layout, shared bits
