@@ -29,8 +29,7 @@ const THEMES = [
   ['sunset', 'Sunset'],
   ['midnight', 'Midnight'],
   ['cyberpunk', 'Cyberpunk'],
-  ['matrix', 'Matrix'],
-  ['internet-rule', 'Internet Rule']
+  ['matrix', 'Matrix']
 ];
 
 (() => {
